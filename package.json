@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production node ./server/bin/www",
-    "dev": "NODE_ENV=developement babel-watch --watch ./server/views ./server/bin/www"
+    "start": "cross-env NODE_ENV=production node ./server/bin/www",
+    "dev": "babel-watch --watch ./server/views ./server/bin/www"
   },
   "dependencies": {
     "@babel/cli": "^7.23.9",
