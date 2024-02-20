@@ -15,8 +15,6 @@ module.exports = {
     path: path.resolve(__dirname, "public"),
     // 2.2 Nombre del archivo de salida
     filename: "bundle.js"
-		// 2.3 Ruta base de archivos estaticos
-    publicPath: "/"
   },
   // 3. Configurando el servidor de desarrollo
   devServer: {
@@ -25,6 +23,33 @@ module.exports = {
     // 3.2 Puerto del servidor de desarrollo
     port: 8080,
     // 3.3 Definiendo el host
-    host: "0.0.0.0"
+    host: "localhost"
   },
+  // Agregando un modulo a webpack
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                [
+                  '@babel/preset-env',
+                  {
+                    'modules': false,
+                    'useBuiltIns': 'usage',
+                    'targets': '> 0.25%, not dead',
+                    'corejs': 3
+                  }
+                ]
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
