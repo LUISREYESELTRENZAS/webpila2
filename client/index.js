@@ -1,11 +1,10 @@
-console.log("Webpack Working!!! 📦");
+console.log("🎉 Client Server Working powered by webpack 🎉");
 
 // Codigo ES6
 // Default Parameters
 let show = (msg="No message given") => {
   console.log(msg)
 }
-show();
 
 // Async Await
 function resolveAfter2Seconds() {
@@ -16,10 +15,12 @@ function resolveAfter2Seconds() {
   });
 }
 
+// Funcion asincrona
 async function asyncCall() {
   console.log("Calling");
   const result = await resolveAfter2Seconds();
   console.log(result);
 }
 
+// Llmar a la funcion asincrona
 asyncCall();
