@@ -1,3 +1,6 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');  
+
+
 // es por ello que veras "requires" no "imports"
 // Importar un administrador de rutas de archivos
 const path = require('path');
@@ -53,7 +56,19 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader"
+        ]
       }
     ]
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+        filename: "styles/app.css"
+    })
+  ]
 };
