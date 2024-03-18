@@ -1,8 +1,5 @@
 // cargando los estilos
 import './styles/style.css'
-// Mensaje en la consola
-console.log("🎉 Estilos cargados correctamente 🎉");
-
 console.log("🎉 Client Server Working powered by webpack 🎉");
 
 // Codigo ES6
@@ -29,3 +26,4 @@ async function asyncCall() {
 
 // Llmar a la funcion asincrona
 asyncCall();
+show();
