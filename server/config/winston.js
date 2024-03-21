@@ -7,10 +7,6 @@ import appRoot from 'app-root-path';
 // composición del formato
 const { combine, timestamp, label, printf, colorize, prettyPrint } = format;
 
-// Creando variable del directorio raiz
-// eslint-disable-next-line
-global['__rootdir'] = path.resolve(process.cwd());
-
 // Se define un esquema de colores
 // segun el grado de severidad
 const colors = {

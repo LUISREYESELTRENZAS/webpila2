@@ -13,7 +13,8 @@
     "b:c": "npm run cleanc && webpack --config ./webpack.config.js --mode production",
     "build": "npm run b:c && npm run b:s",
     "lint:c": "eslint ./client/**/*.js",
-    "lint:s": "eslint ./server/**/*.js"
+    "lint:s": "eslint ./server/**/*.js",
+    "clean:logs" : "rm -rf ./server/logs/*.log"
   },
   "dependencies": {
     "@babel/cli": "^7.23.9",
