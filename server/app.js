@@ -1,6 +1,4 @@
 // Preámbulo
-// Ayuda a manejar errores http
-import createError from 'http-errors';
 // Ayuda a crear servidores web
 import express from 'express';
 // Nucleo de node, ayuda al manejo de las rutas
@@ -14,8 +12,10 @@ import morgan from 'morgan';
 import webpack from 'webpack';
 import WebpackDevMiddleware from 'webpack-dev-middleware';
 import WebpackHotMiddleware from 'webpack-hot-middleware';
-import usersRouter from './routes/users';
-import indexRouter from './routes/index';
+
+// Importando enrutador
+import router from './router';
+
 // Importing webpack configuration
 import webpackConfig from '../webpack.dev.config';
 
@@ -70,26 +70,8 @@ app.use(cookieParser());
 // Servidor de archivos estaticos
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-  log.info(`404 Pagina no encontrada ${req.method} ${req.originalUrl}`);
-  next(createError(404));
-});
-
-// error handler
-// eslint-disable-next-line no-unused-vars
-app.use((err, req, res, next) => {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
+// Registering routes
+router.addRoutes(app);
 
 // usando js moderno
 export default app;
