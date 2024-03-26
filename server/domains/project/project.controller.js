@@ -1,17 +1,18 @@
 // Actions methods
-
 // GET "/project"
 const showDashboard = (req, res) => {
-    res.send('⚠️ UNDER CONSTRUCTION: GET /project ⚠️');
-  };
-  
-  // GET "/project/add"
-  // GET "/project/add-form"
-  const addForm = (req, res) => {
-    res.send('⚠️ UNDER CONSTRUCTION: GET /project/add ⚠️');
+  res.send('⚠️ UNDER CONSTRUCTION: GET /project ⚠️');
 };
-  
-  export default {
-    showDashboard,
-    addForm,
-  };
+
+// GET "/project/add"
+// GET "/project/add-form"
+const addForm = (req, res) => {
+  res.send('⚠️ UNDER CONSTRUCTION: GET /project/add ⚠️');
+};
+
+// Controlador user
+export default {
+  // Action Methods
+  showDashboard,
+  addForm,
+};
